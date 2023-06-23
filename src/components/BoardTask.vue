@@ -7,14 +7,17 @@
         :task="task"
         />
     </el-col>
+    <ModalChangeTask v-if="$store.state.editableTasks" :task="$store.state.editableTasks" />
 </el-main>
 </template>
 
 <script>
 import OneTask from '@/components/OneTask.vue' 
+import ModalChangeTask from '@/components/ModalChangeTask.vue'
     export default {
         components: {
-            OneTask
+            OneTask,
+            ModalChangeTask
         },
         created () {
             this.checkedTasks()
