@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import OneTask from '@/components/boardTask/OneTask.vue' 
+import OneTask from '@/components/OneTask.vue' 
     export default {
         components: {
             OneTask

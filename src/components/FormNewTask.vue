@@ -75,6 +75,7 @@
     methods: {
       uniqid,
       clearForm () {
+        this.$router.push('/tasks')
         this.name = ''
         this.date=''
         this.time=''
@@ -85,7 +86,7 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {
             this.$store.commit('ADD_TASK', {id:uniqid(), ...this.form})
-            this.closeForm()
+            this.clearForm()
           } else {
             console.log('error submit!!');
             return false;
