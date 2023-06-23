@@ -1,24 +1,7 @@
-# to-do-list-vue
-
-## Project setup
+# test-to-do-list
+### Компиляция в dev режиме
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
+npm i
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Ресурс будет доступен по адресу http://localhost:8081
