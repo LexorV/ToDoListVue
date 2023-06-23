@@ -13,6 +13,9 @@ export const store = createStore({
     CLEARE_EDITABLE_TASK (state) {
       state.editableTasks = null
     },
+    INIT_LOCAL_TASK (state, tasks) {
+      state.tasks = tasks
+    },
     SET_EDITABLE_TASK (state, task) {
       state.editableTasks = task
     },

@@ -12,38 +12,27 @@
 </template>
 
 <script>
-import OneTask from '@/components/OneTask.vue' 
+import OneTask from '@/components/OneTask.vue'
 import ModalChangeTask from '@/components/ModalChangeTask.vue'
     export default {
         components: {
             OneTask,
             ModalChangeTask
         },
-        created () {
-            this.checkedTasks()
-        },
-        watch: {
-    '$store.state.isTaskToday': {
-      handler() {
-        this.checkedTasks()
-      },
-      immediate: true
-    } 
-            },     
-        methods: {
-            checkedTasks() {
-                if(this.$store.state.isTaskToday) {
-                this.tasks = this.$store.getters.tasksToday()
-                }
-                else  this.tasks = this.$store.state.tasks 
-            }
-        },
         data() {
             return {
-                tasks: [] 
+                tasks: this.$store.state.tasks ||
+                 JSON.parse(localStorage.getItem('tasks')) 
+                 || [] 
             }
         },
-    }
+        created () {
+            const loacalTask =  JSON.parse(localStorage.getItem('tasks'))
+            if(loacalTask) {
+                this.$store.commit('INIT_LOCAL_TASK', loacalTask)
+            }
+        }
+}
 </script>
 
 <style scoped>

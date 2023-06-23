@@ -92,6 +92,7 @@
         this.time=''
         this.required = false
         this.desc = ''
+        localStorage.setItem('tasks', JSON.stringify(this.$store.state.tasks))
       },
       onSubmit(formName) {
         this.$refs[formName].validate((valid) => {
